@@ -4,12 +4,14 @@
     "parameters": {
         "clusterName": {
             "type": "string",
+            "defaultValue": "myAKSCluster",
             "metadata": {
                 "description": "The name of your existing AKS cluster."
             }
         },
         "location": {
             "type": "string",
+            "defaultValue": "eastus",
             "metadata": {
                 "description": "The location of your existing AKS cluster."
             }
@@ -27,6 +29,10 @@
             "metadata": {
                 "description": "The Vnet subnet resource ID for your existing AKS cluster."
             }
+        },
+        "poolsize": {
+            "type": "number",
+            "defaultValue": 7
         }
     },
     "variables": {
@@ -49,7 +55,7 @@
             "name": "[concat(parameters('clusterName'),'/', parameters('agentPoolName'))]",
             "location": "[parameters('location')]",
             "properties": {
-                "count": "[variables('agentPoolProfiles').agentCount]"
+                "count": "[parameters('poolsize')]"
             }
         }
     ]
