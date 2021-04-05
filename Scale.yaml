@@ -36,7 +36,7 @@ inputs:
   pool_size:
     description: >
       k8s desired # of nodes
-    type: integer
+    type: string
       default: 7
 
 node_templates:
