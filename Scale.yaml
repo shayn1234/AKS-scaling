@@ -49,3 +49,10 @@ node_templates:
       params:
         poolsize: { get_input: pool_size }
       template_file: 'templates/pools.json'
+
+
+  scale_dep:
+    type: cloudify.nodes.SoftwareComponent
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        start: scripts/scale.sh
