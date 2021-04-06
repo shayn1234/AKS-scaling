@@ -32,6 +32,12 @@ inputs:
     type: string
     default: Accenture
 
+  count:
+    description: >
+      Cluster size
+    type: integer
+    default: 5
+
   template:
     default: 'templates/cluster.json'
 
@@ -59,6 +65,7 @@ node_templates:
         enableHttpApplicationRouting: false
         enableAzurePolicy: false
         vmssNodePool: true
+        count: { get_input: count }
         # nodePoolSize: { get_input: node_pool_size }
         workspaceName: DefaultWorkspace-937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88-WEU
         omsWorkspaceId: '/subscriptions/937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88/resourcegroups/defaultresourcegroup-weu/providers/microsoft.operationalinsights/workspaces/defaultworkspace-937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88-weu'
