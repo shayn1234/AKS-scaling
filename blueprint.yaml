@@ -61,7 +61,10 @@ node_templates:
         vmssNodePool: true
         count: { get_input: node_pool_size }
         workspaceName: DefaultWorkspace-937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88-WEU
-        omsWorkspaceId: '/subscriptions/937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88/resourcegroups/defaultresourcegroup-weu/providers/microsoft.operationalinsights/workspaces/defaultworkspace-937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88-weu'
+        omsWorkspaceId: '/subscriptions/937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88/resourcegroups/defaultresourcegroup-weu/providers/microsoft.operationalinsights/workspaces/defaultworkspace-937eb75f-e9d8-40e7-b7b7-ff1bd75f3d88-eus'
         workspaceRegion: eastus
       template_file: { get_input: template }
+
+
+
 
